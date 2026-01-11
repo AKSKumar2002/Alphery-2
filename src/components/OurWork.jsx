@@ -37,7 +37,7 @@ const OurWork = ({ setShowOurProjects }) => {
                 <div className='flex flex-col md:flex-row justify-between items-end mb-16 gap-8'>
                     <div>
                         <motion.h2
-                            initial={{ opacity: 0, filter: 'blur(8px)', y: 20 }}
+                            initial={{ opacity: 0, filter: 'blur(4px)', y: 20 }}
                             whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
                             viewport={{ once: false, margin: "-20%" }}
                             transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
@@ -47,7 +47,7 @@ const OurWork = ({ setShowOurProjects }) => {
                             Our Works
                         </motion.h2>
                         <motion.p
-                            initial={{ opacity: 0, filter: 'blur(8px)', y: 20 }}
+                            initial={{ opacity: 0, filter: 'blur(4px)', y: 20 }}
                             whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
                             viewport={{ once: false, margin: "-20%" }}
                             transition={{ duration: 1.2, delay: 0.1, ease: [0.25, 0.4, 0.25, 1] }}
@@ -59,7 +59,7 @@ const OurWork = ({ setShowOurProjects }) => {
                     </div>
 
                     <motion.button
-                        initial={{ opacity: 0, filter: 'blur(8px)', x: 20 }}
+                        initial={{ opacity: 0, filter: 'blur(4px)', x: 20 }}
                         whileInView={{ opacity: 1, filter: 'blur(0px)', x: 0 }}
                         viewport={{ once: false, margin: "-20%" }}
                         transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
@@ -84,7 +84,7 @@ const OurWork = ({ setShowOurProjects }) => {
                     {workData.map((work, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, filter: 'blur(8px)', y: 50 }}
+                            initial={{ opacity: 0, filter: 'blur(4px)', y: 50 }}
                             whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
                             transition={{ duration: 1, delay: index * 0.15, ease: [0.25, 0.4, 0.25, 1] }}
                             viewport={{ once: false, margin: "-10%" }}

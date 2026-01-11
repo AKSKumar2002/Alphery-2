@@ -10,8 +10,8 @@ const Hero = () => {
       <div className='absolute inset-0 w-full h-full z-0'>
         <div className="absolute inset-0 bg-white/30 dark:bg-black/40 z-10" />
         <video
-          className='w-full h-full object-cover'
-          src='/hero_bg.mp4p'
+          className='w-full h-full object-cover transform-gpu will-change-transform'
+          src='/hero_bg.mpo4'
           autoPlay
           loop
           muted

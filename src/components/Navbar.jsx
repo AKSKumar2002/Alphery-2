@@ -80,7 +80,7 @@ const Navbar = ({ theme, setTheme, setShowProducts, setShowContact, setShowToolS
           <motion.div
             layout
             transition={{ type: "spring", stiffness: 80, damping: 20, mass: 1 }}
-            className={`h-20 ${isScrolled ? 'flex items-center justify-center gap-2 bg-white/70 dark:bg-black/70 backdrop-blur-3xl border border-white/20 dark:border-white/10 rounded-full shadow-2xl px-3 mx-auto mt-4 w-fit' : 'grid grid-cols-[1fr_auto_1fr] items-center w-full'}`}
+            className={`h-20 ${isScrolled ? 'flex items-center justify-center gap-2 bg-white/70 dark:bg-black/70 backdrop-blur-lg border border-white/20 dark:border-white/10 rounded-full shadow-2xl px-3 mx-auto mt-4 w-fit' : 'grid grid-cols-[1fr_auto_1fr] items-center w-full'}`}
           >
 
             {/* Logo */}

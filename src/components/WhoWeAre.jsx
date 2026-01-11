@@ -52,7 +52,7 @@ const WhoWeAre = () => {
                 <div className='flex flex-col lg:flex-row justify-between items-start mb-8 lg:gap-20'>
                     <div className='w-full lg:w-1/3 text-left'>
                         <motion.h2
-                            initial={{ opacity: 0, filter: 'blur(8px)', y: 30 }}
+                            initial={{ opacity: 0, filter: 'blur(4px)', y: 30 }}
                             whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
                             viewport={{ once: false, margin: "-20%" }}
                             transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
@@ -62,7 +62,7 @@ const WhoWeAre = () => {
                         </motion.h2>
                     </div>
                     <motion.div
-                        initial={{ opacity: 0, filter: 'blur(8px)', y: 20 }}
+                        initial={{ opacity: 0, filter: 'blur(4px)', y: 20 }}
                         whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
                         viewport={{ once: false, margin: "-20%" }}
                         transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
@@ -134,7 +134,7 @@ const WhoWeAre = () => {
                         ].map((stat, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, filter: 'blur(8px)', y: 30 }}
+                                initial={{ opacity: 0, filter: 'blur(4px)', y: 30 }}
                                 whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
                                 viewport={{ once: false, margin: "-10%" }}
                                 transition={{ duration: 1, delay: 0.4 + (index * 0.15), ease: [0.25, 0.4, 0.25, 1] }}
