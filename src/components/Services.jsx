@@ -30,21 +30,28 @@ const Services = () => {
   ]
 
   return (
-    <section id='services' className='relative py-24 overflow-hidden bg-white dark:bg-black'>
+    <section id='services' className='relative min-h-screen flex flex-col justify-center overflow-hidden bg-white dark:bg-black pt-24 pb-12'>
 
-      <div className='max-w-7xl 2xl:max-w-[1872px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-24'>
-        <div className='flex flex-col lg:flex-row'>
+      <div className='relative z-20 max-w-7xl 2xl:max-w-[1872px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-24'>
+        <div className='flex flex-col lg:flex-row lg:gap-20'>
 
           {/* Left Column: Heading */}
-          <div className='w-full lg:w-1/3 lg:pr-12 mb-12 lg:mb-0 lg:border-r border-gray-200 dark:border-gray-800'>
-            <div className='relative py-8 sm:py-12'>
-              <h2 className='text-2xl sm:text-4xl md:text-5xl font-medium text-gray-900 dark:text-white mb-6 leading-tight'>
-                How can we help?
+          <div className='w-full lg:w-1/3 mb-12 lg:mb-0'>
+            <div className='relative'>
+              <h2 className='text-4xl sm:text-6xl lg:text-7xl font-medium text-gray-900 dark:text-white mb-8 leading-tight'>
+                How can we <br />help <motion.span
+                  animate={{ rotate: [0, 180, 360] }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  style={{ display: 'inline-block' }}
+                >?</motion.span>
               </h2>
-              <p className='text-sm sm:text-lg text-gray-600 dark:text-gray-400 max-w-sm'>
-                We build digital experiences that drive results.
+              <p className='text-base sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed mt-12'>
+                Whether you need a new product, a fresh design, or technical solutions, we have the expertise to bring your vision to life.
               </p>
-              {/* Optional bigger heading or description if needed, keeping it minimal as per reference image */}
             </div>
           </div>
 

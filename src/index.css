@@ -1,5 +1,5 @@
-/* Premium Inter Font - Apple SF Pro Alternative */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* Premium Manrope Font */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 @import "tailwindcss";
 
@@ -7,8 +7,8 @@
 
 /* FORCE HIDE SCROLLBARS ON EVERYTHING */
 * {
-  /* Premium font stack - SF Pro on Apple devices, Inter elsewhere */
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  /* Premium font stack - Manrope globally */
+  font-family: 'Manrope', sans-serif;
   font-weight: 400;
   /* Enable font feature settings for better readability */
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';

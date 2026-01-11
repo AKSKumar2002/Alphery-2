@@ -93,6 +93,9 @@ const Hero = () => {
           playsInline
         />
       </div>
+
+      {/* Bottom Gradient Blend */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white dark:from-[#0a0a0a] to-transparent z-30 pointer-events-none"></div>
     </div>
   )
 }
