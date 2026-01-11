@@ -83,9 +83,9 @@ const Navbar = ({ theme, setTheme, setShowProducts, setShowContact, setShowToolS
             {/* Logo */}
             {/* Logo - Floating Island */}
             <motion.div
-              initial={{ x: '40vw', opacity: 0 }}
+              initial={{ x: '30vw', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1, ease: 'easeOut' }}
+              transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1] }}
               className="flex-shrink-0 flex items-center justify-center cursor-pointer h-20 w-20"
               onClick={() => handleNavigation('hero')}
             >
@@ -99,14 +99,14 @@ const Navbar = ({ theme, setTheme, setShowProducts, setShowContact, setShowToolS
             {/* Desktop Navigation Links */}
             {/* Desktop Navigation Links - Floating Pill */}
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
+              transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
               className={`hidden lg:flex items-center transition-all duration-300 ${isScrolled ? 'bg-transparent border-none shadow-none' : 'bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-md'} rounded-full px-2 py-2`}
             >
               {[
-                { id: 'who-we-are', label: 'About Us', page: 'who-we-are' },
-                { id: 'services', label: 'Our Services', page: 'services' },
+                { id: 'who-we-are', label: 'Services', page: 'who-we-are' },
+                { id: 'services', label: 'Products', page: 'services' },
                 { id: 'our-work', label: 'Our Work', page: 'our-work' },
               ].map((item) => (
                 <a
@@ -133,16 +133,22 @@ const Navbar = ({ theme, setTheme, setShowProducts, setShowContact, setShowToolS
 
               {/* Premium CTA Button - Desktop */}
               <motion.button
-                initial={{ x: '-40vw', opacity: 0 }}
+                initial={{ x: '-30vw', opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1, ease: 'easeOut' }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{
+                  x: { duration: 1.5, ease: [0.19, 1, 0.22, 1] },
+                  opacity: { duration: 1.5, ease: [0.19, 1, 0.22, 1] },
+                  scale: { duration: 0.2 }
+                }}
                 onClick={() => handleNavigation('contact-us')}
                 className={`
                   hidden lg:flex items-center gap-2 
                   px-6 py-2 rounded-full
                   text-sm font-bold uppercase tracking-wider
-                  transition-all duration-200
-                  shadow-lg hover:shadow-xl hover:scale-105 active:scale-95
+                  transition-colors transition-shadow duration-200
+                  shadow-lg hover:shadow-xl
                   ${showQuboAI
                     ? 'bg-blue-600 text-white hover:bg-blue-700'
                     : 'bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100'

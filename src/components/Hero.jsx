@@ -16,6 +16,7 @@ const Hero = () => {
           loop
           muted
           playsInline
+          poster={assets.hero_img}
         />
       </div>
 

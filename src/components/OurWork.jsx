@@ -42,7 +42,7 @@ const OurWork = ({ setShowOurProjects }) => {
                             viewport={{ once: true }}
                             className='text-5xl sm:text-7xl font-bold text-gray-900 dark:text-white tracking-tight mb-4'
                         >
-                            Selected Works
+                            Our Works
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
@@ -87,13 +87,13 @@ const OurWork = ({ setShowOurProjects }) => {
                             onClick={() => setSelectedProject(work)}
                         >
                             {/* Image Card Container */}
-                            <div className='relative w-full aspect-[4/3] rounded-tl-3xl rounded-tr-[5rem] rounded-br-3xl rounded-bl-[5rem] overflow-hidden bg-gray-100 dark:bg-zinc-900'>
+                            <div className='relative w-full aspect-[4/3] rounded-tl-3xl rounded-tr-[5rem] rounded-br-3xl rounded-bl-[5rem] overflow-hidden bg-gray-100 dark:bg-zinc-900 will-change-transform'>
                                 <div className='absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 z-10' />
 
                                 {/* Floating Tags */}
-                                <div className='absolute top-6 left-6 z-20 flex gap-2 opacity-0 group-hover:opacity-100 transform -translate-y-4 group-hover:translate-y-0 transition-all duration-300'>
+                                <div className='absolute top-6 left-6 z-20 flex gap-2 opacity-0 group-hover:opacity-100 transform -translate-y-4 group-hover:translate-y-0 transition-opacity duration-300'>
                                     {work.tags.map((tag, i) => (
-                                        <span key={i} className='bg-white/90 dark:bg-black/90 backdrop-blur-md px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white'>
+                                        <span key={i} className='bg-white/90 dark:bg-black/90 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white shadow-sm'>
                                             {tag}
                                         </span>
                                     ))}
@@ -102,7 +102,9 @@ const OurWork = ({ setShowOurProjects }) => {
                                 <img
                                     src={work.image}
                                     alt={work.title}
-                                    className='w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105'
+                                    loading="lazy"
+                                    decoding="async"
+                                    className='w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02] will-change-transform'
                                 />
 
                                 {/* Arrow Button */}
