@@ -29,7 +29,7 @@ const OurWork = ({ setShowOurProjects }) => {
     ]
 
     return (
-        <section id='our-work' className='py-24 bg-white dark:bg-black overflow-hidden'>
+        <section id='our-work' className='bg-white dark:bg-black overflow-hidden min-h-screen flex flex-col justify-center gap-12 pt-24 pb-12 rounded-t-[3rem] -mt-12 relative z-30'>
 
             {/* Header */}
             <div className='flex justify-between items-end mb-12 px-4 sm:px-12 lg:px-24 2xl:px-24'>
