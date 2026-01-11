@@ -9,7 +9,7 @@ const Footer = ({ theme, showQuboAI }) => {
     <footer className='bg-[#000000] dark:bg-black text-white py-12 px-4 sm:px-12 lg:px-24 2xl:px-24 overflow-hidden relative'>
 
       {/* Top Section: Slogan & CTA */}
-      <div className='flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 mb-20'>
+      <div className='flex flex-col lg:flex-row justify-between items-center gap-12 mb-20'>
         <div className='max-w-4xl'>
           <p className='text-sm font-bold mb-4 opacity-80'>© 2025</p>
           <h2 className='text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]'>
@@ -18,7 +18,7 @@ const Footer = ({ theme, showQuboAI }) => {
         </div>
         <div>
           <a href="#contact-us" className='inline-block bg-white dark:bg-white text-black dark:text-black px-8 py-3 rounded-full font-bold uppercase tracking-wider hover:scale-105 transition-transform'>
-            Work With Me
+            Work With us
           </a>
         </div>
       </div>
