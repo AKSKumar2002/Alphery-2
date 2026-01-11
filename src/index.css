@@ -36,7 +36,6 @@
 
 /* Standard Scroll Behavior - Fixes Lag */
 html {
-  scroll-behavior: smooth;
   font-size: 16px;
   /* Base size */
 }
