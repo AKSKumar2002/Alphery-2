@@ -38,7 +38,12 @@ const Services = () => {
           {/* Left Column: Heading */}
           <div className='w-full lg:w-1/3 mb-12 lg:mb-0'>
             <div className='relative'>
-              <h2 className='text-4xl sm:text-6xl lg:text-7xl font-medium text-gray-900 dark:text-white mb-8 leading-tight'>
+              <motion.h2
+                initial={{ opacity: 0, filter: 'blur(15px)', y: 30 }}
+                whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+                viewport={{ once: false, margin: "-20%" }}
+                transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
+                className='text-4xl sm:text-6xl lg:text-7xl font-medium text-gray-900 dark:text-white mb-8 leading-tight'>
                 How can we <br />help <motion.span
                   animate={{ rotate: [0, 180, 360] }}
                   transition={{
@@ -48,10 +53,15 @@ const Services = () => {
                   }}
                   style={{ display: 'inline-block' }}
                 >?</motion.span>
-              </h2>
-              <p className='text-base sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed mt-12'>
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, filter: 'blur(15px)', y: 20 }}
+                whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+                viewport={{ once: false, margin: "-20%" }}
+                transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
+                className='text-base sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed mt-12'>
                 Whether you need a new product, a fresh design, or technical solutions, we have the expertise to bring your vision to life.
-              </p>
+              </motion.p>
             </div>
           </div>
 

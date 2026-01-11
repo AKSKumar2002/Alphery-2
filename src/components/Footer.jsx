@@ -9,7 +9,13 @@ const Footer = ({ theme, showQuboAI }) => {
     <footer className='bg-[#000000] dark:bg-black text-white py-12 px-4 sm:px-12 lg:px-24 2xl:px-24 overflow-hidden relative'>
 
       {/* Top Section: Slogan & CTA */}
-      <div className='flex flex-col lg:flex-row justify-between items-center gap-12 mb-20'>
+      <motion.div
+        initial={{ opacity: 0, filter: 'blur(15px)', y: 30 }}
+        whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+        viewport={{ once: false, margin: "-10%" }}
+        transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
+        className='flex flex-col lg:flex-row justify-between items-center gap-12 mb-20'
+      >
         <div className='max-w-4xl'>
           <p className='text-sm font-bold mb-4 opacity-80'>© 2025</p>
           <h2 className='text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]'>
@@ -21,11 +27,18 @@ const Footer = ({ theme, showQuboAI }) => {
             Work With us
           </a>
         </div>
-      </div>
+      </motion.div>
 
       {/* Middle Section: Links Grid */}
       {/* Middle Section: Links Grid */}
-      <div className='grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-24 mb-16 text-sm tracking-wide font-medium'>
+      {/* Middle Section: Links Grid */}
+      <motion.div
+        initial={{ opacity: 0, filter: 'blur(15px)', y: 20 }}
+        whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+        viewport={{ once: false, margin: "-10%" }}
+        transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
+        className='grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-24 mb-16 text-sm tracking-wide font-medium'
+      >
 
         {/* Menu */}
         <div className='flex flex-col gap-6'>
@@ -84,13 +97,19 @@ const Footer = ({ theme, showQuboAI }) => {
           </div>
         </div>
 
-      </div>
+      </motion.div>
 
       {/* Bottom Section: Giant Brand Name */}
       <div className='border-t border-white/20 pt-4'>
-        <h1 className='text-[12.5vw] leading-none font-black tracking-tighter text-center select-none bg-gradient-to-r from-[#5044E5] to-[#4d8cea] bg-clip-text text-transparent'>
+        <motion.h1
+          initial={{ opacity: 0, filter: 'blur(20px)', scale: 0.9 }}
+          whileInView={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
+          viewport={{ once: false, margin: "0%" }}
+          transition={{ duration: 1.5, ease: [0.25, 0.4, 0.25, 1] }}
+          className='text-[12.5vw] leading-none font-black tracking-tighter text-center select-none bg-gradient-to-r from-[#5044E5] to-[#4d8cea] bg-clip-text text-transparent'
+        >
           ALPHERY
-        </h1>
+        </motion.h1>
       </div>
 
     </footer>

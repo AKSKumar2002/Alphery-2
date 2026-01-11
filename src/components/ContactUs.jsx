@@ -42,10 +42,10 @@ const ContactUs = () => {
 
           {/* Left Side Info */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, filter: 'blur(15px)', x: -50 }}
+            whileInView={{ opacity: 1, filter: 'blur(0px)', x: 0 }}
+            viewport={{ once: false, margin: "-20%" }}
+            transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
             className='lg:w-1/3 flex flex-col justify-between lg:pr-16 lg:border-r border-gray-200 dark:border-gray-800'
           >
             <div>
@@ -88,10 +88,10 @@ const ContactUs = () => {
 
           {/* Right Side Form */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, filter: 'blur(15px)', x: 50 }}
+            whileInView={{ opacity: 1, filter: 'blur(0px)', x: 0 }}
+            viewport={{ once: false, margin: "-20%" }}
+            transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
             className='lg:w-1/2 lg:pl-16 mt-12'
           >
             <form onSubmit={onSubmit} className='flex flex-col gap-8'>

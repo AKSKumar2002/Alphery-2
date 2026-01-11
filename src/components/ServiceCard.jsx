@@ -5,10 +5,10 @@ const ServiceCard = ({ service, index, isLastRow, isLastCol }) => {
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, filter: 'blur(15px)', y: 20 }}
+            whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+            transition={{ duration: 1, delay: index * 0.1, ease: [0.25, 0.4, 0.25, 1] }}
+            viewport={{ once: false, margin: "-10%" }}
             className={`
                 group relative p-8 sm:p-12
                 transition-colors duration-300
