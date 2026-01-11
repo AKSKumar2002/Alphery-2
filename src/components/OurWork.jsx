@@ -68,11 +68,11 @@ const OurWork = ({ setShowOurProjects }) => {
                             setShowOurProjects(true)
                             window.scrollTo({ top: 0, behavior: 'smooth' })
                         }}
-                        className='hidden md:flex items-center gap-3 group'
+                        className='hidden md:flex items-center justify-center gap-3 group h-14 px-8 bg-black dark:bg-white rounded-full text-white dark:text-black hover:scale-105 transition-transform'
                     >
-                        <span className="text-lg font-medium text-gray-900 dark:text-white group-hover:text-primary transition-colors">View All Projects</span>
-                        <span className="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-700 flex items-center justify-center group-hover:bg-black group-hover:border-black dark:group-hover:bg-white dark:group-hover:border-white transition-all">
-                            <svg className="w-4 h-4 text-gray-900 dark:text-white group-hover:text-white dark:group-hover:text-black transform group-hover:rotate-45 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <span className="text-sm font-bold uppercase tracking-wider">View All Projects</span>
+                        <span className="w-6 h-6 rounded-full bg-white dark:bg-black flex items-center justify-center">
+                            <svg className="w-3 h-3 text-black dark:text-white transform group-hover:rotate-45 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
                         </span>
@@ -142,7 +142,7 @@ const OurWork = ({ setShowOurProjects }) => {
                             setShowOurProjects(true)
                             window.scrollTo({ top: 0, behavior: 'smooth' })
                         }}
-                        className='bg-black dark:bg-white text-white dark:text-black px-10 py-4 rounded-full font-bold uppercase tracking-wider'
+                        className='bg-black dark:bg-white text-white dark:text-black h-14 px-8 rounded-full font-bold uppercase tracking-wider hover:scale-105 transition-transform flex items-center justify-center'
                     >
                         View All Projects
                     </button>

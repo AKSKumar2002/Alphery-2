@@ -24,7 +24,7 @@ const Footer = ({ theme, showQuboAI }) => {
           </h2>
         </div>
         <div>
-          <a href="#contact-us" className='inline-block bg-white dark:bg-white text-black dark:text-black px-8 py-3 rounded-full font-bold uppercase tracking-wider hover:scale-105 transition-transform'>
+          <a href="#contact-us" className='inline-flex h-14 px-8 items-center justify-center bg-white dark:bg-white text-black dark:text-black rounded-full font-bold uppercase tracking-wider hover:scale-105 transition-transform'>
             Work With us
           </a>
         </div>

@@ -146,7 +146,7 @@ const ContactUs = () => {
               </div>
 
               <div className='pt-8'>
-                <button type="submit" className='bg-black dark:bg-white text-white dark:text-black px-12 py-5 rounded-full font-bold uppercase tracking-wider hover:scale-105 transition-transform duration-300 w-full sm:w-auto'>
+                <button type="submit" className='bg-black dark:bg-white text-white dark:text-black h-14 px-8 rounded-full font-bold uppercase tracking-wider hover:scale-105 transition-transform duration-300 w-full sm:w-auto flex items-center justify-center'>
                   Send Message
                 </button>
               </div>

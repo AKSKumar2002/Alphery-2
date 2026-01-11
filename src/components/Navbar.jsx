@@ -74,24 +74,26 @@ const Navbar = ({ theme, setTheme, setShowProducts, setShowContact, setShowToolS
       {/* Standard Navbar */}
       <nav className={`
         fixed top-0 left-0 right-0 z-50 
-        transition-all duration-300
-        ${isScrolled ? 'bg-white dark:bg-gray-900 shadow-md' : ''}
+        z-50
       `}>
         <div className="max-w-7xl 2xl:max-w-[1872px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-24">
-          <div className="flex justify-between items-center h-20">
+          <motion.div
+            layout
+            transition={{ type: "spring", stiffness: 140, damping: 24, mass: 0.8 }}
+            className={`h-20 ${isScrolled ? 'flex items-center justify-center gap-2 bg-white/70 dark:bg-black/70 backdrop-blur-3xl border border-white/20 dark:border-white/10 rounded-full shadow-2xl px-3 mx-auto mt-4 w-fit' : 'grid grid-cols-[1fr_auto_1fr] items-center w-full'}`}
+          >
 
             {/* Logo */}
             {/* Logo - Floating Island */}
             <motion.div
-              initial={{ x: '30vw', opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1] }}
-              className="flex-shrink-0 flex items-center justify-center cursor-pointer h-20 w-20"
+              layout
+              transition={{ type: "spring", stiffness: 140, damping: 24, mass: 0.8 }}
+              className={`flex items-center justify-center cursor-pointer justify-self-start ${isScrolled ? 'h-10 w-10 ml-2' : 'h-24 w-auto'}`}
               onClick={() => handleNavigation('hero')}
             >
               <img
-                src={theme === 'dark' ? assets.logo_dark || 'https://via.placeholder.com/150' : assets.logo}
-                className="w-auto h-16 transition-all duration-300"
+                src={isScrolled ? '/favicon.png' : (theme === 'dark' ? assets.logo_dark || 'https://via.placeholder.com/150' : assets.logo)}
+                className={`w-auto transition-all duration-300 ${isScrolled ? 'h-8' : 'h-11'}`}
                 alt='Logo'
               />
             </motion.div>
@@ -99,10 +101,11 @@ const Navbar = ({ theme, setTheme, setShowProducts, setShowContact, setShowToolS
             {/* Desktop Navigation Links */}
             {/* Desktop Navigation Links - Floating Pill */}
             <motion.div
+              layout
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
-              className={`hidden lg:flex items-center transition-all duration-300 ${isScrolled ? 'bg-transparent border-none shadow-none' : 'bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-md'} rounded-full px-2 py-2`}
+              className={`hidden lg:flex items-center transition-all duration-300 ${isScrolled ? 'bg-transparent' : 'bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-md rounded-full px-2 h-14'}`}
             >
               {[
                 { id: 'who-we-are', label: 'Services', page: 'who-we-are' },
@@ -127,38 +130,38 @@ const Navbar = ({ theme, setTheme, setShowProducts, setShowContact, setShowToolS
             </motion.div>
 
             {/* Right Section - Theme Toggle & CTA */}
-            <div className='flex items-center gap-4'>
+            <motion.div
+              layout
+              className={`flex items-center gap-4 justify-self-end`}
+            >
 
               {/* Theme Toggle */}
 
 
               {/* Premium CTA Button - Desktop */}
               <motion.button
-                initial={{ x: '-30vw', opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
+                layout
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{
-                  x: { duration: 1.5, ease: [0.19, 1, 0.22, 1] },
-                  opacity: { duration: 1.5, ease: [0.19, 1, 0.22, 1] },
+                  layout: { type: "spring", stiffness: 140, damping: 24, mass: 0.8 },
                   scale: { duration: 0.2 }
                 }}
                 onClick={() => handleNavigation('contact-us')}
                 className={`
-                  hidden lg:flex items-center gap-2 
-                  px-6 py-2 rounded-full
+                  hidden lg:flex items-center justify-center gap-2 
+                  h-14 px-8 rounded-full
                   text-sm font-bold uppercase tracking-wider
                   transition-colors transition-shadow duration-200
-                  shadow-lg hover:shadow-xl
-                  ${showQuboAI
-                    ? 'bg-blue-600 text-white hover:bg-blue-700'
-                    : 'bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100'
-                  }
+                  ${isScrolled ? 'shadow-none' : 'shadow-lg'}
+                  bg-black text-white dark:bg-white dark:text-black
+                  ${showQuboAI ? 'bg-blue-600 text-white hover:bg-blue-700' : ''}
                 `}
               >
-                CONNECT
-
+                {isScrolled ? 'Connect' : "Let's Connect"}
               </motion.button>
+
+
 
               {/* Mobile Menu Button */}
               <button
@@ -175,8 +178,8 @@ const Navbar = ({ theme, setTheme, setShowProducts, setShowContact, setShowToolS
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </nav >
 
