@@ -10,15 +10,31 @@ const Navbar = ({ theme, setTheme, setShowProducts, setShowContact, setShowToolS
   const [activePage, setActivePage] = useState('home') // Track active page
   const [isScrolled, setIsScrolled] = useState(false)
 
+  const [isHidden, setIsHidden] = useState(false)
+
   React.useEffect(() => {
     let lastScrollY = window.scrollY
     const handleScroll = () => {
       const currentScrollY = window.scrollY
+
+      // Dynamic Island Logic
       if (currentScrollY > 10 && lastScrollY <= 10) {
         setIsScrolled(true)
       } else if (currentScrollY <= 10 && lastScrollY > 10) {
         setIsScrolled(false)
       }
+
+      // Hide Navbar when Footer is visible
+      const footer = document.getElementById('footer')
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect()
+        if (footerRect.top < 80) {
+          setIsHidden(true)
+        } else {
+          setIsHidden(false)
+        }
+      }
+
       lastScrollY = currentScrollY
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -75,6 +91,8 @@ const Navbar = ({ theme, setTheme, setShowProducts, setShowContact, setShowToolS
       <nav className={`
         fixed top-0 left-0 right-0 z-50 
         z-50
+        transition-transform duration-500 ease-in-out
+        ${isHidden ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'}
       `}>
         <div className="max-w-7xl 2xl:max-w-[1872px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-24">
           <motion.div
