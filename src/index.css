@@ -30,6 +30,23 @@
 /* Standard Scroll Behavior - Fixes Lag */
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
+  /* Base size */
+}
+
+/* Fluid Scaling for Laptops */
+@media (max-width: 1536px) {
+  html {
+    font-size: 14px;
+    /* Slight zoom out for 15" laptops */
+  }
+}
+
+@media (max-width: 1280px) {
+  html {
+    font-size: 12px;
+    /* Stronger zoom out for 13" laptops */
+  }
 }
 
 body {
