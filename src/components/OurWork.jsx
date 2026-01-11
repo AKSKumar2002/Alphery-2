@@ -83,11 +83,11 @@ const OurWork = ({ setShowOurProjects }) => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.15 }}
                             viewport={{ once: true }}
-                            className={`group cursor-pointer flex flex-col gap-6 ${index === 1 ? 'md:mt-16' : ''}`} // Staggered grid effect
+                            className={`group cursor-pointer flex flex-col gap-6`} // Removed staggered effect
                             onClick={() => setSelectedProject(work)}
                         >
                             {/* Image Card Container */}
-                            <div className='relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-gray-100 dark:bg-zinc-900'>
+                            <div className='relative w-full aspect-[4/3] rounded-tl-3xl rounded-tr-[5rem] rounded-br-3xl rounded-bl-[5rem] overflow-hidden bg-gray-100 dark:bg-zinc-900'>
                                 <div className='absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 z-10' />
 
                                 {/* Floating Tags */}
