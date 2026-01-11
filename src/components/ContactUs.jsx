@@ -35,24 +35,8 @@ const ContactUs = () => {
   const [selectedInterest, setSelectedInterest] = React.useState("")
 
   return (
-    <section id='contact-us' className='relative text-black dark:text-white py-24 min-h-screen flex items-center justify-center overflow-hidden'>
-
-      {/* Background Video */}
-      <div className='absolute inset-0 z-0'>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className='w-full h-full object-cover'
-        >
-          <source src="/Contact us.mp4" type="video/mp4" />
-        </video>
-        {/* Overlay to ensure text readability */}
-        <div className='absolute inset-0 bg-white/80 dark:bg-black/80 backdrop-blur-sm'></div>
-      </div>
-
-      <div className='relative z-10 max-w-7xl 2xl:max-w-[1872px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-24 w-full'>
+    <section id='contact-us' className='bg-white dark:bg-black text-black dark:text-white py-24 min-h-screen flex items-center justify-center overflow-hidden'>
+      <div className='max-w-7xl 2xl:max-w-[1872px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-24 w-full'>
 
         <div className='flex flex-col lg:flex-row justify-between gap-16 lg:gap-0'>
 

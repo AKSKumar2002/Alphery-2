@@ -41,20 +41,7 @@ const WhoWeAre = () => {
     }, []);
 
     return (
-        <section id='who-we-are' className='relative min-h-screen flex flex-col justify-center overflow-hidden text-gray-900 dark:text-white pt-24 pb-12'>
-
-            {/* Background Video */}
-            <div className='absolute inset-0 w-full h-full z-0'>
-                <div className="absolute inset-0 bg-white/70 dark:bg-black/70 z-10" />
-                <video
-                    className='w-full h-full object-cover'
-                    src='/Section 2.mp4'
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                />
-            </div>
+        <section id='who-we-are' className='relative min-h-screen flex flex-col justify-center overflow-hidden text-gray-900 dark:text-white bg-white dark:bg-black pt-24 pb-12'>
 
             {/* Top Gradient Blend */}
             <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white dark:from-[#0a0a0a] to-transparent z-20 pointer-events-none"></div>
