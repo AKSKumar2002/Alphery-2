@@ -88,7 +88,7 @@ const Footer = ({ theme, showQuboAI }) => {
 
       {/* Bottom Section: Giant Brand Name */}
       <div className='border-t border-white/20 pt-4'>
-        <h1 className='text-[14vw] leading-none font-black tracking-tighter text-center select-none bg-gradient-to-r from-[#5044E5] to-[#4d8cea] bg-clip-text text-transparent'>
+        <h1 className='text-[13vw] leading-none font-black tracking-tighter text-center select-none bg-gradient-to-r from-[#5044E5] to-[#4d8cea] bg-clip-text text-transparent'>
           ALPHERY
         </h1>
       </div>

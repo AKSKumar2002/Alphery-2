@@ -11,8 +11,8 @@ import ContactUs from './components/ContactUs'
 import { Toaster } from 'react-hot-toast'
 import Footer from './components/Footer'
 import { motion } from 'motion/react'
+import Lenis from 'lenis'
 import Launcher from './components/Launcher'
-
 
 // Lazy Load Heavy Components
 const Products = React.lazy(() => import('./components/Products'))
@@ -20,8 +20,32 @@ const ToolSpace = React.lazy(() => import('./components/ToolSpace'))
 const OurProjects = React.lazy(() => import('./components/OurProjects'))
 const QuboAIPage = React.lazy(() => import('./components/QuboAI/QuboAIPage'))
 
-
 const App = () => {
+
+  // Initialize Lenis Smooth Scroll
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    })
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    return () => {
+      lenis.destroy()
+    }
+  }, [])
 
   const [launchConfig] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -53,37 +77,37 @@ const App = () => {
   useEffect(() => {
     // Only initialize cursor tracking on desktop
     if (window.innerWidth < 1024) return
-
+ 
     const handleMouseMove = (e) => {
       mouse.current.x = e.clientX
       mouse.current.y = e.clientY
     }
-
+ 
     document.addEventListener('mousemove', handleMouseMove, { passive: true })
-
+ 
     let animationFrameId
-
+ 
     const animate = () => {
       position.current.x += (mouse.current.x - position.current.x) * 0.1
       position.current.y += (mouse.current.y - position.current.y) * 0.1
-
+ 
       if (dotRef.current && outlineRef.current) {
         dotRef.current.style.transform = `translate3d(${mouse.current.x - 6}px, ${mouse.current.y - 6}px, 0)`
         outlineRef.current.style.transform = `translate3d(${position.current.x - 20}px, ${position.current.y - 20}px, 0)`
       }
-
+ 
       animationFrameId = requestAnimationFrame(animate)
     }
-
+ 
     animate()
-
+ 
     return () => {
       document.removeEventListener('mousemove', handleMouseMove)
       if (animationFrameId) {
         cancelAnimationFrame(animationFrameId)
       }
     }
-
+ 
   }, [])
   */
 
