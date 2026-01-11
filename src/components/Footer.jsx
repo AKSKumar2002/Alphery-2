@@ -109,7 +109,7 @@ const Footer = ({ theme, showQuboAI }) => {
           viewport={{ once: false, margin: "0%" }}
           transition={{ duration: 1.5, ease: [0.25, 0.4, 0.25, 1] }}
           style={{ willChange: 'filter, opacity, transform' }}
-          className='text-[12.5vw] leading-none font-black tracking-tighter text-center select-none bg-gradient-to-r from-[#5044E5] to-[#4d8cea] bg-clip-text text-transparent'
+          className='text-[15vw] leading-none font-black tracking-tighter text-center select-none bg-gradient-to-r from-[#5044E5] to-[#4d8cea] bg-clip-text text-transparent'
         >
           ALPHERY
         </motion.h1>
