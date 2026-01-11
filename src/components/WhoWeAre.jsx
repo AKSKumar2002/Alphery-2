@@ -1,8 +1,45 @@
-import React from 'react'
-import { motion } from 'motion/react'
+import React, { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
 import assets from '../assets/assets'
 
 const WhoWeAre = () => {
+
+    const reviews = [
+        {
+            rating: "5.0 / 5",
+            text: "We asked Alphery to redesign our brand and website from scratch, and they absolutely nailed it.",
+            name: "Sarah Mitchell",
+            role: "Marketing Director, Lunoa"
+        },
+        {
+            rating: "5.0 / 5",
+            text: "Incredible attention to detail and a seamless development process. Highly recommended!",
+            name: "David Chen",
+            role: "Founder, TechFlow"
+        },
+        {
+            rating: "5.0 / 5",
+            text: "They transformed our vision into a digital reality that exceeded our expectations.",
+            name: "Elena Rodriguez",
+            role: "CEO, StartUp Inc"
+        },
+        {
+            rating: "5.0 / 5",
+            text: "Professional, creative, and efficient. The best agency we've worked with.",
+            name: "Michael Chang",
+            role: "CTO, FutureSoft"
+        }
+    ];
+
+    const [currentReview, setCurrentReview] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentReview((prev) => (prev + 1) % reviews.length);
+        }, 4000); // Change review every 4 seconds
+        return () => clearInterval(timer);
+    }, []);
+
     return (
         <section id='who-we-are' className='relative min-h-screen flex flex-col justify-center overflow-hidden text-gray-900 dark:text-white pt-24 pb-12'>
 
@@ -57,26 +94,45 @@ const WhoWeAre = () => {
                         {/* List Menu */}
 
 
-                        {/* Testimonial */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.6 }}
-                            className='bg-gray-50 dark:bg-white/5 p-8 rounded-2xl md:h-64 flex flex-col justify-between hover:bg-gray-100 dark:hover:bg-white/10 transition-colors duration-300'
-                        >
-                            <div className='flex items-center gap-1 mb-3 text-orange-500 text-sm'>
-                                {'★★★★★'.split('').map((star, i) => <span key={i}>{star}</span>)}
-                                <span className='text-gray-400 ml-2 font-medium'>5.0 / 5</span>
+                        {/* Testimonial Carousel */}
+                        <div className='bg-gray-50 dark:bg-white/5 p-8 rounded-2xl md:h-64 flex flex-col justify-between hover:bg-gray-100 dark:hover:bg-white/10 transition-colors duration-300 relative overflow-hidden'>
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={currentReview}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -20 }}
+                                    transition={{ duration: 0.5 }}
+                                    className='flex flex-col justify-between h-full'
+                                >
+                                    <div>
+                                        <div className='flex items-center gap-1 mb-3 text-sm'>
+                                            {'★★★★★'.split('').map((star, i) => <span key={i} className="text-transparent bg-clip-text bg-gradient-to-r from-[#5044E5] to-[#8A84FF]">{star}</span>)}
+                                            <span className='text-gray-400 ml-2 font-medium'>{reviews[currentReview].rating}</span>
+                                        </div>
+                                        <p className='text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed max-w-xs'>
+                                            "{reviews[currentReview].text}"
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <p className='font-bold text-sm text-gray-900 dark:text-white'>{reviews[currentReview].name}</p>
+                                        <p className='text-xs text-gray-500'>{reviews[currentReview].role}</p>
+                                    </div>
+                                </motion.div>
+                            </AnimatePresence>
+
+                            {/* Bullets */}
+                            <div className="absolute bottom-8 right-8 flex gap-2 z-10">
+                                {reviews.map((_, index) => (
+                                    <button
+                                        key={index}
+                                        onClick={() => setCurrentReview(index)}
+                                        className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentReview ? 'bg-gradient-to-r from-[#5044E5] to-[#8A84FF] w-4' : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400'}`}
+                                        aria-label={`Go to review ${index + 1}`}
+                                    />
+                                ))}
                             </div>
-                            <p className='text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed max-w-xs'>
-                                We asked Alphery to redesign our brand and website from scratch, and they absolutely nailed it.
-                            </p>
-                            <div>
-                                <p className='font-bold text-sm text-gray-900 dark:text-white'>Sarah Mitchell</p>
-                                <p className='text-xs text-gray-500'>Marketing Director, Lunoa</p>
-                            </div>
-                        </motion.div>
+                        </div>
                     </div>
 
                     {/* Right Column: Stats Cards */}
@@ -106,60 +162,7 @@ const WhoWeAre = () => {
 
                 </div>
 
-                {/* Second Row - Duplicate */}
-                <div className='flex flex-col lg:flex-row gap-16 lg:gap-24 mt-8 lg:mt-12'>
 
-                    {/* Left Column: Menu & Testimonial */}
-                    <div className='w-full lg:w-1/3 flex flex-col'>
-
-                        {/* Testimonial */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.6 }}
-                            className='bg-gray-50 dark:bg-white/5 p-8 rounded-2xl md:h-64 flex flex-col justify-between hover:bg-gray-100 dark:hover:bg-white/10 transition-colors duration-300'
-                        >
-                            <div className='flex items-center gap-1 mb-3 text-orange-500 text-sm'>
-                                {'★★★★★'.split('').map((star, i) => <span key={`second-${i}`}>{star}</span>)}
-                                <span className='text-gray-400 ml-2 font-medium'>5.0 / 5</span>
-                            </div>
-                            <p className='text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed max-w-xs'>
-                                We asked Alphery to redesign our brand and website from scratch, and they absolutely nailed it.
-                            </p>
-                            <div>
-                                <p className='font-bold text-sm text-gray-900 dark:text-white'>Sarah Mitchell</p>
-                                <p className='text-xs text-gray-500'>Marketing Director, Lunoa</p>
-                            </div>
-                        </motion.div>
-                    </div>
-
-                    {/* Right Column: Stats Cards */}
-                    <div className='w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-6'>
-                        {[
-                            { number: '5+', label: 'Completed projects for growing brands' },
-                            { number: '100%', label: 'Client satisfaction rate since inception' },
-                            { number: '10k+', label: 'Users reached through websites we\'ve designed' }
-                        ].map((stat, index) => (
-                            <motion.div
-                                key={`second-${index}`}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.4 + (index * 0.1) }}
-                                className='bg-gray-50 dark:bg-white/5 p-8 rounded-2xl md:h-64 flex flex-col gap-4 hover:bg-gray-100 dark:hover:bg-white/10 transition-colors duration-300'
-                            >
-                                <h3 className='text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white tracking-tighter'>
-                                    {stat.number}
-                                </h3>
-                                <p className='text-gray-600 dark:text-gray-400 font-medium leading-relaxed text-xs sm:text-sm lg:text-base'>
-                                    {stat.label}
-                                </p>
-                            </motion.div>
-                        ))}
-                    </div>
-
-                </div>
             </div>
         </section>
     )
