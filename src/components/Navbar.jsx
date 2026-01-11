@@ -107,7 +107,8 @@ const Navbar = ({ theme, setTheme, setShowProducts, setShowContact, setShowToolS
               {[
                 { id: 'who-we-are', label: 'Services', page: 'who-we-are' },
                 { id: 'services', label: 'Products', page: 'services' },
-                { id: 'our-work', label: 'Our Work', page: 'our-work' },
+                { id: 'our-work', label: 'Tool Space', page: 'our-work' },
+                { id: 'our-work', label: 'Alphery OS', page: 'our-work' },
               ].map((item) => (
                 <a
                   key={item.id}

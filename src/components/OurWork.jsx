@@ -37,19 +37,21 @@ const OurWork = ({ setShowOurProjects }) => {
                 <div className='flex flex-col md:flex-row justify-between items-end mb-16 gap-8'>
                     <div>
                         <motion.h2
-                            initial={{ opacity: 0, filter: 'blur(15px)', y: 20 }}
+                            initial={{ opacity: 0, filter: 'blur(8px)', y: 20 }}
                             whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
                             viewport={{ once: false, margin: "-20%" }}
                             transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
+                            style={{ willChange: 'filter, opacity, transform' }}
                             className='text-5xl sm:text-7xl font-bold text-gray-900 dark:text-white tracking-tight mb-4'
                         >
                             Our Works
                         </motion.h2>
                         <motion.p
-                            initial={{ opacity: 0, filter: 'blur(15px)', y: 20 }}
+                            initial={{ opacity: 0, filter: 'blur(8px)', y: 20 }}
                             whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
                             viewport={{ once: false, margin: "-20%" }}
                             transition={{ duration: 1.2, delay: 0.1, ease: [0.25, 0.4, 0.25, 1] }}
+                            style={{ willChange: 'filter, opacity, transform' }}
                             className='text-xl text-gray-600 dark:text-gray-400 max-w-lg'
                         >
                             Showcasing our finest digital craftsmanship.
@@ -57,10 +59,11 @@ const OurWork = ({ setShowOurProjects }) => {
                     </div>
 
                     <motion.button
-                        initial={{ opacity: 0, filter: 'blur(15px)', x: 20 }}
+                        initial={{ opacity: 0, filter: 'blur(8px)', x: 20 }}
                         whileInView={{ opacity: 1, filter: 'blur(0px)', x: 0 }}
                         viewport={{ once: false, margin: "-20%" }}
                         transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
+                        style={{ willChange: 'filter, opacity, transform' }}
                         onClick={() => {
                             setShowOurProjects(true)
                             window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -81,10 +84,11 @@ const OurWork = ({ setShowOurProjects }) => {
                     {workData.map((work, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, filter: 'blur(15px)', y: 50 }}
+                            initial={{ opacity: 0, filter: 'blur(8px)', y: 50 }}
                             whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
                             transition={{ duration: 1, delay: index * 0.15, ease: [0.25, 0.4, 0.25, 1] }}
                             viewport={{ once: false, margin: "-10%" }}
+                            style={{ willChange: 'filter, opacity, transform' }}
                             className={`group cursor-pointer flex flex-col gap-6`} // Removed staggered effect
                             onClick={() => setSelectedProject(work)}
                         >
