@@ -79,7 +79,7 @@ const Navbar = ({ theme, setTheme, setShowProducts, setShowContact, setShowToolS
         <div className="max-w-7xl 2xl:max-w-[1872px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-24">
           <motion.div
             layout
-            transition={{ type: "spring", stiffness: 140, damping: 24, mass: 0.8 }}
+            transition={{ type: "spring", stiffness: 80, damping: 20, mass: 1 }}
             className={`h-20 ${isScrolled ? 'flex items-center justify-center gap-2 bg-white/70 dark:bg-black/70 backdrop-blur-3xl border border-white/20 dark:border-white/10 rounded-full shadow-2xl px-3 mx-auto mt-4 w-fit' : 'grid grid-cols-[1fr_auto_1fr] items-center w-full'}`}
           >
 
@@ -87,7 +87,7 @@ const Navbar = ({ theme, setTheme, setShowProducts, setShowContact, setShowToolS
             {/* Logo - Floating Island */}
             <motion.div
               layout
-              transition={{ type: "spring", stiffness: 140, damping: 24, mass: 0.8 }}
+              transition={{ type: "spring", stiffness: 80, damping: 20, mass: 1 }}
               className={`flex items-center justify-center cursor-pointer justify-self-start ${isScrolled ? 'h-10 w-10 ml-2' : 'h-24 w-auto'}`}
               onClick={() => handleNavigation('hero')}
             >
@@ -132,7 +132,7 @@ const Navbar = ({ theme, setTheme, setShowProducts, setShowContact, setShowToolS
             {/* Right Section - Theme Toggle & CTA */}
             <motion.div
               layout
-              className={`flex items-center gap-4 justify-self-end`}
+              className={`flex items-center gap-4 justify-self-end relative z-20`}
             >
 
               {/* Theme Toggle */}
@@ -144,7 +144,7 @@ const Navbar = ({ theme, setTheme, setShowProducts, setShowContact, setShowToolS
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{
-                  layout: { type: "spring", stiffness: 140, damping: 24, mass: 0.8 },
+                  layout: { type: "spring", stiffness: 80, damping: 20, mass: 1 },
                   scale: { duration: 0.2 }
                 }}
                 onClick={() => handleNavigation('contact-us')}
