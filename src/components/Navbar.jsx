@@ -91,8 +91,8 @@ const Navbar = ({ theme, setTheme, setShowProducts, setShowContact, setShowToolS
       <nav className={`
         fixed top-0 left-0 right-0 z-50 
         z-50
-        transition-transform duration-500 ease-in-out
-        ${isHidden ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'}
+        transition-all duration-700 ease-[0.32,0.72,0,1]
+        ${isHidden ? 'opacity-0 blur-2xl scale-95 pointer-events-none' : 'opacity-100 blur-0 scale-100 pointer-events-auto'}
       `}>
         <div className="max-w-7xl 2xl:max-w-[1872px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-24">
           <motion.div
