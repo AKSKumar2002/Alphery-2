@@ -25,12 +25,12 @@ const App = () => {
   // Initialize Lenis Smooth Scroll
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 2.5, // "Luxury" Slow Smoothness (Apple Style)
+      duration: 1.5, // Reduced from 2.5 for snappy feel
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
-      mouseMultiplier: 0.8, // Heavier feel
+      mouseMultiplier: 1, // Standard responsiveness
       smoothTouch: false,
       touchMultiplier: 2,
     })

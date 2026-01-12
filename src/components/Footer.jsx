@@ -12,7 +12,7 @@ const Footer = ({ theme, showQuboAI }) => {
       <motion.div
         initial={{ opacity: 0, filter: 'blur(8px)', y: 30 }}
         whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
-        viewport={{ once: false, margin: "-10%" }}
+        viewport={{ once: true, margin: "-10%" }}
         transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
         style={{ willChange: 'filter, opacity, transform' }}
         className='flex flex-col lg:flex-row justify-between items-center gap-12 mb-20'
@@ -36,7 +36,7 @@ const Footer = ({ theme, showQuboAI }) => {
       <motion.div
         initial={{ opacity: 0, filter: 'blur(8px)', y: 20 }}
         whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
-        viewport={{ once: false, margin: "-10%" }}
+        viewport={{ once: true, margin: "-10%" }}
         transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
         style={{ willChange: 'filter, opacity, transform' }}
         className='grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-24 mb-16 text-sm tracking-wide font-medium'
@@ -106,7 +106,7 @@ const Footer = ({ theme, showQuboAI }) => {
         <motion.h1
           initial={{ opacity: 0, filter: 'blur(10px)', scale: 0.9 }}
           whileInView={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
-          viewport={{ once: false, margin: "0%" }}
+          viewport={{ once: true, margin: "0%" }}
           transition={{ duration: 1.5, ease: [0.25, 0.4, 0.25, 1] }}
           style={{ willChange: 'filter, opacity, transform' }}
           className='text-[15vw] leading-none font-black tracking-tighter text-center select-none bg-gradient-to-br from-[#7C1CE2] to-[#2D13BF] bg-clip-text text-transparent'

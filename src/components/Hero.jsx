@@ -11,7 +11,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-white/30 dark:bg-black/40 z-10" />
         <video
           className='w-full h-full object-cover transform-gpu will-change-transform'
-          src='/hero_bg.mp44'
+          src='/hero_bg1.mp4'
           autoPlay
           loop
           muted

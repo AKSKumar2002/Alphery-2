@@ -41,7 +41,7 @@ const Services = () => {
               <motion.h2
                 initial={{ opacity: 0, filter: 'blur(8px)', y: 30 }}
                 whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
-                viewport={{ once: false, margin: "-20%" }}
+                viewport={{ once: true, margin: "-20%" }}
                 transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
                 style={{ willChange: 'filter, opacity, transform' }}
                 className='text-4xl sm:text-6xl lg:text-7xl font-medium text-gray-900 dark:text-white mb-8 leading-tight'>
@@ -58,7 +58,7 @@ const Services = () => {
               <motion.p
                 initial={{ opacity: 0, filter: 'blur(8px)', y: 20 }}
                 whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
-                viewport={{ once: false, margin: "-20%" }}
+                viewport={{ once: true, margin: "-20%" }}
                 transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
                 style={{ willChange: 'filter, opacity, transform' }}
                 className='text-base sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed mt-12'>

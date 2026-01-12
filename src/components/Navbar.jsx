@@ -13,32 +13,42 @@ const Navbar = ({ theme, setTheme, setShowProducts, setShowContact, setShowToolS
   const [isHidden, setIsHidden] = useState(false)
 
   React.useEffect(() => {
-    let lastScrollY = window.scrollY
     const handleScroll = () => {
       const currentScrollY = window.scrollY
 
       // Dynamic Island Logic
-      if (currentScrollY > 10 && lastScrollY <= 10) {
+      if (currentScrollY > 10) {
         setIsScrolled(true)
-      } else if (currentScrollY <= 10 && lastScrollY > 10) {
+      } else {
         setIsScrolled(false)
       }
-
-      // Hide Navbar when Footer is visible
-      const footer = document.getElementById('footer')
-      if (footer) {
-        const footerRect = footer.getBoundingClientRect()
-        if (footerRect.top < 80) {
-          setIsHidden(true)
-        } else {
-          setIsHidden(false)
-        }
-      }
-
-      lastScrollY = currentScrollY
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+
+    // Use IntersectionObserver to hide Navbar when Footer is visible
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // If footer is intersecting (visible), hide navbar
+        // Use a small threshold so it triggers as soon as footer starts appearing
+        setIsHidden(entry.isIntersecting)
+      },
+      {
+        root: null, // viewport
+        threshold: 0, // Trigger as soon as one pixel is visible
+        rootMargin: "0px 0px -80px 0px" // Offset triggering slightly if needed
+      }
+    )
+
+    const footer = document.getElementById('footer')
+    if (footer) {
+      observer.observe(footer)
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (footer) observer.unobserve(footer)
+      observer.disconnect()
+    }
   }, [])
 
   const handleNavigation = (section) => {

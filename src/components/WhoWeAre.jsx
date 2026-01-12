@@ -54,7 +54,7 @@ const WhoWeAre = () => {
                         <motion.h2
                             initial={{ opacity: 0, filter: 'blur(4px)', y: 30 }}
                             whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
-                            viewport={{ once: false, margin: "-20%" }}
+                            viewport={{ once: true, margin: "-20%" }}
                             transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
                             style={{ willChange: 'filter, opacity, transform' }}
                             className='text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-4 lg:mb-0'>
@@ -64,7 +64,7 @@ const WhoWeAre = () => {
                     <motion.div
                         initial={{ opacity: 0, filter: 'blur(4px)', y: 20 }}
                         whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
-                        viewport={{ once: false, margin: "-20%" }}
+                        viewport={{ once: true, margin: "-20%" }}
                         transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
                         style={{ willChange: 'filter, opacity, transform' }}
                         className='w-full lg:w-2/3'
@@ -136,7 +136,7 @@ const WhoWeAre = () => {
                                 key={index}
                                 initial={{ opacity: 0, filter: 'blur(4px)', y: 30 }}
                                 whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
-                                viewport={{ once: false, margin: "-10%" }}
+                                viewport={{ once: true, margin: "-10%" }}
                                 transition={{ duration: 1, delay: 0.4 + (index * 0.15), ease: [0.25, 0.4, 0.25, 1] }}
                                 style={{ willChange: 'filter, opacity, transform' }}
                                 className='bg-gray-50 dark:bg-white/5 p-8 rounded-2xl md:h-64 flex flex-col gap-4 hover:bg-gray-100 dark:hover:bg-white/10 transition-colors duration-300'
